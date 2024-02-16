@@ -1,89 +1,89 @@
 import './App.css';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { TiTick } from "react-icons/ti";
+import { GrFormClose } from "react-icons/gr";
+
 function App() {
+
+ const data = [{
+  "sub":"FREE",
+  "price": "$0/month",
+  "users" :"Single User",
+  "gb":"50GB Storages",
+  "public_projects":"Unlimited Public Projects",
+  "access": "Community Access",
+  "private_projects": "Unlimated Private Projects",
+  "support": "Dedicated Phone Support",
+  "domain": "Free Subdomain",
+  "reports": "Monthly Status Reports",
+ },
+{
+  "sub":"PLUS",
+  "price": "$9/month",
+  "users" :"5 User",
+  "gb":"50GB Storages",
+  "public_projects":"Unlimited Public Projects",
+  "access": "Community Access",
+  "private_projects": "Unlimated Private Projects",
+  "support": "Dedicated Phone Support",
+  "domain": "Free Subdomain",
+  "reports": "Monthly Status Reports",
+},
+{
+  "sub":"PRO",
+  "price": "$49/month",
+  "users" :"Unlimited User",
+  "gb":"50GB Storages",
+  "public_projects":"Unlimited Public Projects",
+  "access": "Community Access",
+  "private_projects": "Unlimated Private Projects",
+  "support": "Dedicated Phone Support",
+  "domain": "Free Subdomain",
+  "reports": "Monthly Status Reports",
+}
+]
+ 
   return (
-    <section class="pricing py-5">
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-lg-4">
-          <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-              <h5 class="card-title text-muted text-uppercase text-center">Free</h5>
-              <h6 class="card-price text-center">$0<span class="period">/month</span></h6>
-              
-              <ul class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>5GB Storage</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Unlimited
-                  Private Projects</li>
-                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Dedicated
-                  Phone Support</li>
-                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Free Subdomain
-                </li>
-                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
-                  Reports</li>
-              </ul>
-              <div class="d-grid">
-                <a href="#" class="btn btn-primary text-uppercase">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="card mb-5 mb-lg-0">
-            <div class="card-body">
-              <h5 class="card-title text-muted text-uppercase text-center">Plus</h5>
-              <h6 class="card-price text-center">$9<span class="period">/month</span></h6>
-              
-              <ul class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong></li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>50GB Storage</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Free Subdomain</li>
-                <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
-                  Reports</li>
-              </ul>
-              <div class="d-grid">
-                <a href="#" class="btn btn-primary text-uppercase">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title text-muted text-uppercase text-center">Pro</h5>
-              <h6 class="card-price text-center">$49<span class="period">/month</span></h6>
-              
-              <ul class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong>
-                </li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>150GB Storage</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Public Projects</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Community Access</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Unlimited Private Projects</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Phone Support</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited</strong> Free
-                  Subdomains</li>
-                <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
-              </ul>
-              <div class="d-grid">
-                <a href="#" class="btn btn-primary text-uppercase">Button</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section className='container'>
+     { data.map((item,index)=>(
+      <section className='induvial-box' key={index}>
+         <p style={{opacity:"0.5"}}><b>{item.sub}</b></p>
+         <h3>{item.price}</h3>
+         <hr/>
+
+          <section className='ul'>
+          <span> <TiTick/>{item.users}</span>
+         <br/>
+
+         <span> <TiTick/> {item.gb}</span>
+         <br/>
+
+         <span><TiTick/>{item.public_projects}</span>
+
+         <br/>
+
+         <span><TiTick/>{item.access}</span>
+         <br/>
+         <span style={{ opacity: index === 0 && 0.5 }} > {index === 0 ? <GrFormClose/> : <TiTick/> }{item.private_projects}</span>
+
+       <br/>
+
+       <span  style={{ opacity: index === 0 && 0.5 }} > {index === 0 ? <GrFormClose/> : <TiTick/> }{item.support}</span>
+
+        <br/>
+
+        <span  style={{ opacity: index === 0 && 0.5 }} > {index === 0 ? <GrFormClose/> : <TiTick/> } {item.domain}</span>
+
+        <br/>
+
+        <span  style={{ opacity: index === 0 || index === 1 ? 0.5 : 1 }} > {index === 0 || index === 1 ? <GrFormClose/> : <TiTick/> }  {item.reports}</span>
+         </section>
+         <Button variant="primary" ><b>Button</b></Button>
+      </section>
+          
+      ))
+     }
   </section>
   );
 }
